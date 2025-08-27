@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
       type: "qris",
       note: "Scan QR berikut.",
       // Ganti ke gambar QRIS kamu
-      qr: "assets/qris.png"
+      qr: "asset/qris2.jpeg"
     },
     "BCA Transfer": {
       type: "bank",
