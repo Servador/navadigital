@@ -970,4 +970,5 @@ checkoutBtn?.addEventListener('click', (e) => {
   // lanjut proses kalau valid...
 });
 
+ $("#waBtn").href = Flow.waLink(text);
 
