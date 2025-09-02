@@ -1164,3 +1164,29 @@ body{ background: var(--bg); color: var(--fg); }
 
 /* pastikan toast selalu di atas */
 #toast{ position:fixed; right:24px; bottom:24px; z-index:9999; }
+
+/* === Fix: Success modal scroll & sticky actions (mobile) === */
+.success-dialog{
+  max-height: 86vh;            /* biar tidak melebihi layar */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;            /* bungkusnya hidden */
+}
+
+.success-wrap{
+  overflow: auto;              /* konten bisa di-scroll */
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 12px;        /* ruang ekstra di bawah konten */
+}
+
+/* tombol di bawah selalu terlihat */
+.success-actions{
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  gap: .6rem;
+  justify-content: center;
+  background: var(--card);
+  padding: 8px;
+  border-top: 1px solid var(--border);
+}
