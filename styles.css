@@ -758,3 +758,15 @@ body.is-modal-open #productGrid{
 
 /* Tabs tetap boleh diklik saat tidak ada modal */
 .tabs{ position: relative; z-index: 3; }
+
+html, body{
+  min-height:100%;
+  height:auto;
+  overflow-y:auto;
+  overflow-x:hidden;
+  -webkit-overflow-scrolling:touch;
+  touch-action: pan-y;        /* halaman tetap bisa di-scroll vertikal */
+}
+img{ display:block; max-width:100%; height:auto; }
+.promo-track{ touch-action: pan-x pinch-zoom; }  /* slider tetap enak swipe */
+
