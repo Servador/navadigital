@@ -749,31 +749,41 @@ function bindFilters(){
   });
 }
 
-// ==== iOS rubber-band fallback: blok overscroll di top/bottom ====
-(function(){
-  const root = document.scrollingElement || document.documentElement;
-  let startY = 0;
+// === Batasi rubber-band hanya di slider promo (aman untuk scroll halaman) ===
+(function () {
+  const track = document.querySelector('.promo-track');
+  if (!track) return;
 
-  document.addEventListener('touchstart', (e)=>{
+  let startX = 0, startY = 0;
+
+  track.addEventListener('touchstart', (e) => {
+    if (!e.touches || !e.touches.length) return;
+    startX = e.touches[0].clientX;
     startY = e.touches[0].clientY;
-  }, { passive:false });
+  }, { passive: true });
 
-  document.addEventListener('touchmove', (e)=>{
-    // jangan blokir gesture di slider horizontal
-    if (e.target.closest('.promo-track')) return;
+  track.addEventListener('touchmove', (e) => {
+    if (!e.touches || !e.touches.length) return;
 
-    const atTop    = root.scrollTop <= 0;
-    const atBottom = root.scrollTop + root.clientHeight >= root.scrollHeight;
+    const x = e.touches[0].clientX;
     const y = e.touches[0].clientY;
-    const goingUp = y > startY;
+    const dx = Math.abs(x - startX);
+    const dy = Math.abs(y - startY);
 
-    // kalau sudah di paling atas & digeser ke bawah, atau di paling bawah & digeser ke atas → stop
-    if ((atTop && goingUp) || (atBottom && !goingUp)) {
-      e.preventDefault();
+    // Jika gesture dominan horizontal, baru kita intervensi;
+    // gesture vertikal dibiarkan agar halaman bisa scroll normal.
+    if (dx > dy) {
+      const atLeft  = track.scrollLeft <= 0;
+      const atRight = track.scrollLeft + track.clientWidth >= track.scrollWidth - 1;
+      const goingRight = x < startX;
+      const goingLeft  = x > startX;
+      if ((atLeft && goingLeft) || (atRight && goingRight)) {
+        e.preventDefault(); // cegah rubber-band di ujung slider
+      }
     }
-    startY = y;
-  }, { passive:false });
+  }, { passive: false });
 })();
+
 
 // Router
 function closeModal(){
