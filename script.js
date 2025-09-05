@@ -225,12 +225,32 @@ function buildPackages(product){
   if(Array.isArray(product.packages) && product.packages.length) return product.packages;
   return [{ id:`${product.id}-custom`, title:"Paket", desc:"Note: Sesuaikan paket di script.js", price: product.from }];
 }
+// ---- image helper (https + fallback) ----
+function fixImages(root = document){
+  root.querySelectorAll('img').forEach(img => {
+    // paksa https bila perlu
+    if (img.src.startsWith('http://')) {
+      img.src = img.src.replace('http://','https://');
+    }
+    img.loading = img.loading || 'lazy';
+    img.referrerPolicy = img.referrerPolicy || 'no-referrer';
+    // fallback jika gagal load
+    img.addEventListener('error', () => {
+      img.src = 'assets/servadorcorp-icon.png'; // ganti ke placeholder kamu kalau mau
+    }, { once:true });
+  });
+}
 
 // Rendering
 function renderProducts(list){
   const grid = $("#productGrid"); if(!grid) return;
   grid.innerHTML = "";
   list.forEach(p => {
+    // ... bikin elemen card, logo, meta, btn, append ke grid ...
+  });
+  // ⬇️ tambahkan ini
+  fixImages(grid);
+}
     const card = document.createElement("div");
     card.className = "card";
     const logo = document.createElement("div");
@@ -833,8 +853,11 @@ function init(){
     loadCek();
   }
 }
-document.addEventListener("DOMContentLoaded", init);
-
+document.addEventListener('DOMContentLoaded', ()=>{
+  try {
+    fixImages(document);
+  } catch(e){ console.warn('fixImages init', e); }
+});
 
 async function loadCek(){
   const form = document.getElementById("cekForm");
@@ -910,3 +933,53 @@ function renderCek(o){
     </div>
   `;
 }
+
+// === Perbaiki gambar di HP: lazy-load + http→https + pengganti data-src ===
+function fixImages(root = document){
+  const imgs = root.querySelectorAll('img');
+
+  imgs.forEach(img=>{
+    // kalau pakai data-src di HTML, isi ke src
+    if (!img.getAttribute('src') && img.dataset && img.dataset.src){
+      img.setAttribute('src', img.dataset.src);
+    }
+    // force https (mixed-content sering diblok di iOS)
+    try {
+      const u = new URL(img.src, location.href);
+      if (u.protocol === 'http:') {
+        u.protocol = 'https:';
+        img.src = u.href;
+      }
+    } catch {}
+    // aktifkan lazy standar bila ada
+    if (!img.hasAttribute('loading')) img.loading = 'lazy';
+    img.decoding = 'async';
+    // tampilkan blok (kalau ada CSS/UA yang bikin inline)
+    img.style.display = 'block';
+    img.style.maxWidth = '100%';
+    img.style.height = 'auto';
+  });
+
+  // Fallback IntersectionObserver: kalau gambar pakai data-src tapi IO tidak ada
+  const lazy = [...root.querySelectorAll('img[data-src]')].filter(i => !i.getAttribute('src'));
+  if (lazy.length){
+    if ('IntersectionObserver' in window){
+      const io = new IntersectionObserver(es=>{
+        es.forEach(e=>{
+          if (e.isIntersecting){
+            e.target.src = e.target.dataset.src;
+            e.target.removeAttribute('data-src');
+            io.unobserve(e.target);
+          }
+        });
+      }, { rootMargin: '150px 0px' });
+      lazy.forEach(i=>io.observe(i));
+    } else {
+      lazy.forEach(i=>{
+        i.src = i.dataset.src;
+        i.removeAttribute('data-src');
+      });
+    }
+  }
+}
+
