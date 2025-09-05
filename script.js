@@ -167,10 +167,52 @@ const LOGO_BG = {
 };
 
 // Helpers
-const $ = (sel, root=document) => root.querySelector(sel);
-const $$ = (sel, root=document) => [...root.querySelectorAll(sel)];
-const save = (k,v) => localStorage.setItem(k, JSON.stringify(v));
-const load = (k, fallback=null) => { try{ return JSON.parse(localStorage.getItem(k)) ?? fallback }catch{ return fallback } };
+// === Storage shim: aman di iOS/Android (Private/In-App) ===
+const _storage = (() => {
+  const mem = {};
+  const can = (api) => {
+    try {
+      const k = "__t";
+      api.setItem(k, "1"); api.removeItem(k);
+      return true;
+    } catch { return false; }
+  };
+  const hasLS = (() => { try { return 'localStorage' in window && can(localStorage); } catch { return false; } })();
+  const hasSS = (() => { try { return 'sessionStorage' in window && can(sessionStorage); } catch { return false; } })();
+
+  const getRaw = (k) => {
+    try {
+      if (hasLS) return localStorage.getItem(k);
+      if (hasSS) return sessionStorage.getItem(k);
+    } catch {}
+    return (k in mem) ? JSON.stringify(mem[k]) : null;
+  };
+  const setRaw = (k, v) => {
+    try {
+      if (hasLS) return localStorage.setItem(k, v);
+      if (hasSS) return sessionStorage.setItem(k, v);
+    } catch {}
+    mem[k] = JSON.parse(v);
+  };
+  const rm = (k) => {
+    try {
+      if (hasLS) return localStorage.removeItem(k);
+      if (hasSS) return sessionStorage.removeItem(k);
+    } catch {}
+    delete mem[k];
+  };
+
+  return {
+    persistent: hasLS || hasSS,
+    get(k, fb=null){ try{ const v=getRaw(k); return v!=null?JSON.parse(v):fb; }catch{ return fb; } },
+    set(k, v){ try{ setRaw(k, JSON.stringify(v)); }catch{} },
+    remove(k){ rm(k); }
+  };
+})();
+
+const save   = (k, v) => _storage.set(k, v);
+const load   = (k, fb=null) => _storage.get(k, fb);
+const remove = (k) => _storage.remove(k);
 
 function buildPackages(product){
   if(Array.isArray(product.packages) && product.packages.length) return product.packages;
