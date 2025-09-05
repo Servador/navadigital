@@ -10,6 +10,18 @@
   --radius:18px;
 }
 
+html, body {
+  height: auto;            /* jangan paksa 100% yang kadang bikin aneh di iOS */
+  min-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch; /* momentum scrolling di iOS */
+  touch-action: pan-y;                /* prioritas gerak vertikal untuk halaman */
+}
+.promo-track {
+  touch-action: pan-x pinch-zoom;     /* slider tetap enak di-swipe horizontal */
+}
+
 *{box-sizing:border-box} html,body{height:100%}
 html,body{max-width:100%; overflow-x:hidden}
 img,svg,video{max-width:100%; height:auto}
