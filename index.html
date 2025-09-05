@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- FAVICON -->
+<link rel="icon" type="image/svg+xml" href="brand/favicon.svg">
+<link rel="alternate icon" type="image/png" href="assets/Nava.jpeg" sizes="512x512">
+<link rel="apple-touch-icon" href="brand/favicon-512.png">
+<link rel="mask-icon" href="brand/favicon.svg" color="#2563eb">
+<meta name="theme-color" content="#0b1220">
+  <script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (window.lucide) lucide.createIcons({ attrs: { 'stroke-width': 1.9 } });
+  });
+</script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NavaDigital — Layanan Digital Premium Termudah</title>
+  <meta name="description" content="Top up & langganan aplikasi favorit: Netflix, Spotify, YouTube, Canva, Disney, Robux, Turnitin, CapCut, VPN, dan lainnya.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="home">
+  <header class="site-header">
+    <div class="container row between center">
+      <a href="index.html" class="brand">
+  <img src="assets/Nava.jpeg" alt="NavaDigital" class="brand-logo">
+  <span class="brand-name">NavaDigital</span>
+</a>
+      <nav class="main-nav">
+        <a href="cek.html" class="nav-accent gold">Cek Transaksi</a>
+  <a href="#katalog" class="nav-accent">Produk</a>
+  <a href="#caraorder" class="nav-accent">Cara Order</a>
+  <a href="#keunggulan" class="nav-accent">FAQ</a>
+</nav>
+<a class="btn ghost sm-only" href="cek.html" aria-label="Cek Transaksi">Cek Transaksi</a>
+      <a class="btn primary" href="#katalog"><i data-lucide="zap"></i>Mulai Belanja</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Layanan Digital Premium Termudah &amp; Termurah</h1>
+      <p>Nikmati kemudahan isi saldo &amp; langganan aplikasi favorit dengan harga bersahabat. Proses instan, dukungan 24/7, garansi aman.</p>
+
+<!-- Promo banners -->
+<div class="promo-rail" aria-label="Promo utama">
+  <div class="promo-track" data-promos>
+    <!-- Slide 1 -->
+    <a class="promo-card">
+      <img class="promo-img" src="assets/bg3.png" alt="Promo 1">
+      <div class="promo-copy">
+        <span class="pill">Baru</span>
+        <h3></h3>
+        <p>Deskripsi singkat promo 1.</p>
+      </div>
+    </a>
+    <!-- Slide 2 -->
+    <a class="promo-card alt">
+      <img class="promo-img" src="assets/bg7.png" alt="Promo 2">
+      <div class="promo-copy">
+        <span class="pill">Baru</span>
+        <h3></h3>
+        <p>Deskripsi singkat promo 2.</p>
+      </div>
+    </a>
+  </div>
+
+  <!-- Dots -->
+  <div class="dots">
+    <button class="dot is-active" aria-label="Slide 1"></button>
+    <button class="dot" aria-label="Slide 2"></button>
+  </div>
+</div>
+
+      </div>
+
+      <!-- Search (dipendekin & center) -->
+      <div class="searchbar">
+        <input id="searchInput" type="search" placeholder="Cari layanan (mis. Netflix, Spotify, Robux)">
+        <button id="searchBtn" class="btn">Cari</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="katalog" class="catalog container">
+    <div class="tabs" role="tablist" aria-label="Kategori">
+      <button class="tab is-active" data-filter="all" role="tab" aria-selected="true">Semua</button>
+      <button class="tab" data-filter="Streaming" role="tab">Streaming</button>
+      <button class="tab" data-filter="Musik" role="tab">Musik</button>
+      <button class="tab" data-filter="Video" role="tab">Video</button>
+      <button class="tab" data-filter="Design" role="tab">Design</button>
+      <button class="tab" data-filter="Gaming" role="tab">Gaming</button>
+      <button class="tab" data-filter="Lainnya" role="tab">Lainnya</button>
+    </div>
+    <div id="productGrid" class="grid"></div>
+  </section>
+
+  <!-- ===================== C A R A  O R D E R ===================== -->
+<section id="caraorder" class="container order-steps">
+  <h2 class="center">Cara Order</h2>
+
+  <div class="steps-grid">
+    <article class="step-card">
+      <div class="step-num">1</div>
+      <h4>Pilih Layanan</h4>
+      <p>Buka <strong>Produk</strong>, pakai tab <em>Streaming/Musik/Video/…</em> atau kolom pencarian.</p>
+    </article>
+
+    <article class="step-card">
+      <div class="step-num">2</div>
+      <h4>Pilih Paket</h4>
+      <p>Tekan <strong>Pilih Paket</strong> pada layanan yang kamu mau, lalu pilih paketnya.</p>
+    </article>
+
+    <article class="step-card">
+      <div class="step-num">3</div>
+      <h4>Isi Kontak</h4>
+      <p>Masukkan email/WhatsApp untuk pengiriman. Klik <strong>Checkout</strong>.</p>
+    </article>
+
+    <article class="step-card">
+      <div class="step-num">4</div>
+      <h4>Bayar & Upload Bukti</h4>
+      <p>Di halaman bayar, pilih metode (QRIS/GoPay/BCA/SeaBank/Jago). Nominal sudah termasuk <em>kode unik</em>. Selesaikan pembayaran ≤ <strong>5 menit</strong>, upload bukti, lalu klik <strong>Selesai</strong>.</p>
+    </article>
+
+    <article class="step-card">
+      <div class="step-num">5</div>
+      <h4>Cek Status</h4>
+      <p>Pesanan diproses otomatis. Cek pakai <strong>Order ID</strong> di <a href="cek.html" class="nav-accent gold">Cek Transaksi</a>. Invoice juga terkirim.</p>
+    </article>
+  </div>
+
+  <ul class="tiny muted bullet-notes">
+    <li>Jika butuh bantuan, hubungi WhatsApp admin (ikon kanan bawah).</li>
+    <li>Refund/garansi mengikuti ketentuan masing-masing layanan.</li>
+  </ul>
+</section>
+
+
+<!-- ===================== KEUNGGULAN KAMI ===================== -->
+<section id="keunggulan" class="container features-block">
+  <h2 class="center">Keunggulan Kami</h2>
+  <div class="feature-grid">
+    <article class="feature-card">
+      <div class="fx-icon">⚡</div>
+      <div>
+        <h4>Proses Super Cepat</h4>
+        <p>Rata-rata &lt; 1 menit setelah pembayaran.</p>
+      </div>
+    </article>
+    <article class="feature-card">
+      <div class="fx-icon">🛡️</div>
+      <div>
+        <h4>Aman & Bergaransi</h4>
+        <p>Transaksi resmi, bantuan penuh jika ada kendala.</p>
+      </div>
+    </article>
+    <article class="feature-card">
+      <div class="fx-icon">💬</div>
+      <div>
+        <h4>Support 24/7</h4>
+        <p>WhatsApp responsif setiap hari.</p>
+      </div>
+    </article>
+    <article class="feature-card">
+      <div class="fx-icon">🏷️</div>
+      <div>
+        <h4>Harga Bersahabat</h4>
+        <p>Diskon rutin & paket hemat.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+
+  <footer id="kontak" class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>NavaDigital</h3>
+        <p>Platform Layanan digital terpercaya untuk semua kebutuhan premium Anda. Proses cepat, aman, dan terjangkau.</p>
+      </div>
+      <div>
+        <h4>Layanan</h4>
+        <ul>
+          <li><a href="#katalog">Netflix Premium</a></li>
+          <li><a href="#katalog">Spotify Premium</a></li>
+          <li><a href="#katalog">YouTube Premium</a></li>
+          <li><a href="cek.html">Cek Transaksi</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Dukungan</h4>
+        <ul>
+          <li><a href="#faq">Pusat Bantuan</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="https://wa.me/6282129837460" target="_blank" rel="noopener">Hubungi Kami</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Syarat &amp; Ketentuan</a></li>
+          <li><a href="#">Kebijakan Privasi</a></li>
+          <li><a href="#">Kebijakan Refund</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="copyright">© 2025 NavaDigital</p>
+  </footer>
+
+  <!-- Modal Pilih Paket -->
+  <div id="packageModal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" data-close aria-label="Tutup">×</button>
+      <div class="modal-header">
+        <h3 id="modalTitle">Pilih Paket</h3>
+        <p id="modalSubtitle"></p>
+      </div>
+      <div class="modal-body">
+        <form id="packageList" class="package-list" aria-label="Daftar paket"></form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn ghost" data-close>Batalkan</button>
+        <button id="toCheckoutBtn" class="btn primary">Lanjut Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp -->
+  <a class="wa-float" id="waFloat" href="https://wa.me/6282129837460?text=Halo%20NavaDigital%2C%20saya%20ingin%20order" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 2a10 10 0 0 0-8.9 14.6L2 22l5.6-1.1A10 10 0 1 0 12 2Z" fill="white" opacity=".2"/>
+      <path d="M12 4a8 8 0 0 0-7.1 11.7L4.4 20l4.3-1A8 8 0 1 0 12 4Zm2.2 10.1c-.2.1-.4.1-.6 0-2-.9-3.3-2.3-4.2-4.2-.1-.2-.1-.5 0-.6l.7-1c.1-.2.3-.2.5-.2h.2c.2 0 .4.1.5.3l.5 1.2c.1.2.1.4 0 .6l-.3.4c.9 1.6 2.1 2.7 3.7 3.4l.4-.3c.2-.1.4-.1.6 0l1.2.5c.2.1.3.3.3.5v.2c0 .2 0 .4-.2.5l-1 .7Z" fill="white"/>
+    </svg>
+  </a>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

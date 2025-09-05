@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- FAVICON -->
+<link rel="icon" type="image/svg+xml" href="brand/favicon.svg">
+<link rel="alternate icon" type="image/png" href="assets/Nava.jpeg" sizes="512x512">
+<link rel="apple-touch-icon" href="brand/favicon-512.png">
+<link rel="mask-icon" href="brand/favicon.svg" color="#2563eb">
+<meta name="theme-color" content="#0b1220">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout — NavaDigital</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="checkout">
+  <header class="site-header">
+    <div class="container row between center">
+      <a class="brand" href="./"><span class="brand-badge">N</span> NavaDigital</a>
+      <a class="btn ghost" href="./">Kembali</a>
+    </div>
+  </header>
+
+  <main class="container narrow">
+    <h1>Checkout</h1>
+    <div id="orderSummary" class="checkout-card"></div>
+    <div id="billSummary" class="bill-summary"></div>
+
+    <h3>Pilih Metode Pembayaran</h3>
+    <div class="pay-methods" id="methodGroup">
+      <label class="method-item"><input type="radio" name="method" value="QRIS" checked> <span class="name">QRIS</span> <span class="meta">Scan semua e-wallet/bank</span></label>
+      <label class="method-item"><input type="radio" name="method" value="GoPay"> <span class="name">GoPay</span> <span class="meta">Transfer e-wallet</span></label>
+      <label class="method-item"><input type="radio" name="method" value="SeaBank"> <span class="name">SeaBank</span> <span class="meta">Transfer bank</span></label>
+      <label class="method-item"><input type="radio" name="method" value="BCA"> <span class="name">BCA</span> <span class="meta">Transfer bank</span></label>
+      <label class="method-item"><input type="radio" name="method" value="Jago"> <span class="name">Bank Jago</span> <span class="meta">Transfer bank</span></label>
+    </div>
+
+    <form id="buyerForm" class="form">
+      <label>Kontak (Email / No. WhatsApp)
+        <input id="contactInput" type="text" placeholder="contoh: 081234567890 atau email@contoh.com" required>
+      </label>
+      <label>Catatan (opsional)
+        <textarea id="noteInput" rows="3" placeholder="Username, email akun, atau detail lain bila diperlukan"></textarea>
+      </label>
+      <div class="row between center">
+        <a href="./" class="btn ghost">Belanja Lagi</a>
+        <button id="toPaymentBtn" type="submit" class="btn primary">Pilih Pembayaran</button>
+      </div>
+    </form>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

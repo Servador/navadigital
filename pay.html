@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- FAVICON -->
+<link rel="icon" type="image/svg+xml" href="brand/favicon.svg">
+<link rel="alternate icon" type="image/png" href="assets/Nava.jpeg" sizes="512x512">
+<link rel="apple-touch-icon" href="brand/favicon-512.png">
+<link rel="mask-icon" href="brand/favicon.svg" color="#2563eb">
+<meta name="theme-color" content="#0b1220">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pembayaran — NavaDigital</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="pay">
+  <header class="site-header">
+    <div class="container row between center">
+      <a class="brand" href="./"><span class="brand-badge">N</span> NavaDigital</a>
+      <a class="btn ghost" href="./checkout.html">Kembali</a>
+    </div>
+  </header>
+
+  <main class="container narrow">
+  <h1>Konfirmasi Pembayaran</h1>
+  <div id="paySummary" class="checkout-card"></div>
+  <div id="methodDetail" class="method-detail"></div>
+
+  <!-- Universal Payment Box -->
+  <div class="pay-box">
+    <!-- QR khusus untuk QRIS -->
+    <div id="qrisSection" style="display:none">
+      <h2>QRIS</h2>
+      <div class="qris-box">
+        <img src="assets/qris.jpeg" alt="QRIS" />
+      </div>
+      <p class="muted tiny">Scan QR di atas menggunakan aplikasi pembayaran kamu.</p>
+    </div>
+
+    <!-- Upload bukti pembayaran untuk semua metode -->
+    <div class="upload">
+      <label for="proof">Unggah bukti pembayaran (gambar)</label>
+      <input id="proof" type="file" accept="image/*" capture="environment">
+    </div>
+    <label>Catatan / Nomor referensi (opsional)
+      <input id="refInput" type="text" placeholder="contoh: ID transaksi bank">
+    </label>
+
+    <div class="row between center">
+      <span id="timer" class="badge">Waktu tersisa: 05:00</span>
+      <div class="row gap">
+        <a href="./checkout.html" class="btn ghost">Batalkan</a>
+        <button id="paidBtn" class="btn primary">Selesai</button>
+      </div>
+    </div>
+    <p class="tiny muted">Catatan: gambar bukti tidak bisa terkirim otomatis ke WhatsApp. Kirim manual jika diperlukan.</p>
+  </div>
+</main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

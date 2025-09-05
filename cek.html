@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- FAVICON -->
+<link rel="icon" type="image/svg+xml" href="brand/favicon.svg">
+<link rel="alternate icon" type="image/png" href="assets/Nava.jpeg" sizes="512x512">
+<link rel="apple-touch-icon" href="brand/favicon-512.png">
+<link rel="mask-icon" href="brand/favicon.svg" color="#2563eb">
+<meta name="theme-color" content="#0b1220">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cek Transaksi — NavaDigital</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="cek">
+  <header class="site-header">
+    <div class="container row between center">
+      <a class="brand" href="./"><span class="brand-badge">N</span> NavaDigital</a>
+      <a class="btn ghost" href="./">Beranda</a>
+    </div>
+  </header>
+
+  <main class="container narrow">
+    <h1>Cek Transaksi / Invoice</h1>
+    <form id="cekForm" class="form">
+      <label>Masukkan Order ID / Invoice
+        <input id="cekInput" type="text" placeholder="contoh: NV1725...." required>
+      </label>
+      <div class="row">
+        <button class="btn primary" type="submit">Cari</button>
+      </div>
+    </form>
+
+    <div id="cekResult" class="checkout-card" style="display:none"></div>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
