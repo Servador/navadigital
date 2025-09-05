@@ -6,7 +6,14 @@ const SHEETS_KEY = 'RAHASIA_AMAN'; // sama dgn API_KEY di Apps Script
 
 // --- Config ---
 const WHATSAPP_NUMBER = "6287882925751";
-const CURRENCY = (n) => new Intl.NumberFormat('id-ID', { style:'currency', currency:'IDR', maximumFractionDigits:0 }).format(n);
+const CURRENCY = (n) => {
+  try {
+    return new Intl.NumberFormat('id-ID', { style:'currency', currency:'IDR', maximumFractionDigits:0 }).format(n);
+  } catch {
+    // Fallback sederhana
+    return 'Rp ' + Math.round(Number(n)||0).toLocaleString('id-ID');
+  }
+};
 function generateUniqueCode(){ return Math.floor(101 + Math.random()*799); }
 
 // Payment info (edit as needed)
@@ -362,6 +369,14 @@ function loadCheckout(){
     saveOrder(order);
     location.href = "pay.html";
   });
+}
+
+// === Fetch dengan timeout (aman untuk iOS/Android lama) ===
+function fetchWithTimeout(url, init = {}, ms = 25000){
+  if (!('AbortController' in window)) return fetch(url, init); // fallback tanpa timeout
+  const ctrl = new AbortController();
+  const t = setTimeout(()=>ctrl.abort(), ms);
+  return fetch(url, { ...init, signal: ctrl.signal }).finally(()=>clearTimeout(t));
 }
 
 // Pay
