@@ -692,32 +692,6 @@ function bindFilters(){
   });
 }
 
-// Ganti blok lama dengan ini (aman untuk iOS/Android)
-(function(){
-  const root = document.scrollingElement || document.documentElement;
-  let startY = 0;
-
-  document.addEventListener('touchstart', (e)=>{
-    startY = e.touches[0].clientY;
-  }, { passive:true }); // passive true = tidak memblokir scroll
-
-  document.addEventListener('touchmove', (e)=>{
-    // Hanya aktif jika modal terbuka
-    if (!document.body.classList.contains('is-modal-open')) return;
-
-    const atTop    = root.scrollTop <= 0;
-    const atBottom = root.scrollTop + root.clientHeight >= root.scrollHeight;
-    const y = e.touches[0].clientY;
-    const goingUp = y > startY;
-
-    if ((atTop && goingUp) || (atBottom && !goingUp)) {
-      e.preventDefault();
-    }
-    startY = y;
-  }, { passive:false });
-})();
-
-
 // Router
 function closeModal(){
   const modal = document.getElementById("packageModal");
