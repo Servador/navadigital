@@ -1,7 +1,7 @@
 // ====== Minimal Storefront (clean build) ======
 
 // === Google Sheets API (Apps Script) ===
-const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbyBIk2P3YOXGuJF5vcqoW4QsrmDpIFaKqWTS7dymXNKqzZNF6Ndq60waiKyrlUB7gkU/exec';
+const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwefSJsfyKhrx_IIrSJe5GvhxdSBwqaVR1dFhsBgMzpEooERTrTWW0ZrfdYF-wqpRXY/exec';
 const SHEETS_KEY = 'RAHASIA_AMAN'; // sama dgn API_KEY di Apps Script
 
 // --- Config ---
