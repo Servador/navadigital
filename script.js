@@ -57,10 +57,10 @@ const PRODUCTS = [
     from:1000,    cat:"Design", kind:"subscription", 
     desc:"Desain profesional & kolaborasi.",
     img:"assets/canva.jpg",
-    packages:[{ id:"cv1", name:"Member 1 Bulan", desc:"Note : Member + Free Designer", price:1000},
-              { id:"cv2", name:"Member 1 Tahun", desc:"Note : Member + Free Designer", price:10000},
-              { id:"cv3", name:"Admin 1 Bulan", desc:"Note : Bisa Invite 20 Member", price:12000},
-              { id:"cv4", name:"Owner 1 Bulan", desc:"Note : Bisa Invite 100 Member", price:10000}
+    packages:[{ id:"cv1", title:"Member 1 Bulan", desc:"Note : Member + Free Designer", price:1000},
+              { id:"cv2", title:"Member 1 Tahun", desc:"Note : Member + Free Designer", price:10000},
+              { id:"cv3", title:"Admin 1 Bulan", desc:"Note : Bisa Invite 20 Member", price:12000},
+              { id:"cv4", title:"Owner 1 Bulan", desc:"Note : Bisa Invite 100 Member", price:10000}
     ] },
   { id:"vidio",       
     name:"Vidio",                   
