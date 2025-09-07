@@ -7,11 +7,26 @@
 <link rel="apple-touch-icon" href="brand/favicon-512.png">
 <link rel="mask-icon" href="brand/favicon.svg" color="#2563eb">
 <meta name="theme-color" content="#0b1220">
-  <script src="https://unpkg.com/lucide@latest"></script>
+<script defer src="https://unpkg.com/lucide@latest"></script>
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    if (window.lucide) lucide.createIcons({ attrs: { 'stroke-width': 1.9 } });
-  });
+  (function(){
+    function renderIcons(){
+      if (window.lucide) lucide.createIcons({ attrs: { 'stroke-width': 1.9 } });
+    }
+    document.addEventListener('DOMContentLoaded', renderIcons);
+    window.addEventListener('load', renderIcons);
+    // fallback: kalau masih belum ada library, tampilkan emoji ⚡ dulu
+    setTimeout(function(){
+      if (!window.lucide){
+        document.querySelectorAll('[data-lucide="zap"]').forEach(function(el){
+          el.textContent = '⚡';
+          el.style.fontSize = '16px';
+          el.style.lineHeight = 1;
+          el.style.marginRight = '6px';
+        });
+      }
+    }, 1200);
+  })();
 </script>
 
   <meta charset="utf-8">
