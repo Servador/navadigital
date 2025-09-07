@@ -34,7 +34,7 @@ const PRODUCTS = [
     img:"assets/netflix.jpg", 
     packages:[{id:"nflx-1p", title:"Sharing 1P2U 1 Bulan", desc:"Note: akun sharing 1 profil diisi 2 user", price:15000},
               {id:"nflx-2p", title:"Sharing 1P1U 1 Bulan", desc:"Note: akun sharing 1 profil diisi 1 user", price:20000},
-              {id:"nflx-3p", title:"Netflix Private", desc:"Note: Jatah 1 profile boleh login 2 device (hp/tv) - bebas ubah nama/foto profile - garansi anti limit", price:30000},
+              {id:"nflx-3p", title:"Netflix Private", desc:"Note: Jatah 1 profile boleh login 2 device (hp/tv) - bebas ubah nama/foto profile - garansi anti limit", price:25000},
               {id:"nflx-4p", title:"Netflix Group", desc:"Note: Dapat 5 Profil", price:100000},
     ] },
   { id:"spotify",     
@@ -154,6 +154,13 @@ const PRODUCTS = [
     img:"assets/capcut.png",
     packages:[{id:"c1", title:"Capcut Sharing 1 Bulan", desc:"Note : Akun Seller - Full Garansi", price:5000},
               {id:"c2", title:"Capcut Private 1 Bulan", desc:"Note : Akun Seller - Full Garansi", price:12000}
+] },
+  { id:"zoom",      
+    name:"Zoom Pro",                  
+    from:8000,    cat:"Lainnya", kind:"subscription", 
+    desc:"Perekaman Cloud (Cloud Recording).",
+    img:"assets/capcut.png",
+    packages:[{id:"z1", title:"Zoom Pro 1 Bulan", desc:"Note : Full Garansi", price:8000},
 ] },
 ];
 
