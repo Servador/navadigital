@@ -159,7 +159,7 @@ const PRODUCTS = [
     name:"Zoom Pro",                  
     from:8000,    cat:"Lainnya", kind:"subscription", 
     desc:"Perekaman Cloud (Cloud Recording).",
-    img:"assets/capcut.png",
+    img:"assets/zoom.jpg",
     packages:[{id:"z1", title:"Zoom Pro 1 Bulan", desc:"Note : Full Garansi", price:8000},
 ] },
 ];
