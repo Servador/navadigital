@@ -768,3 +768,39 @@ html, body{ overscroll-behavior: contain; } /* atau: overscroll-behavior-y: cont
 @media (max-width: 820px){
   body::before{ position:absolute; } /* dari fixed -> absolute */
 }
+
+/* === Header mobile spacing + blur fix === */
+.site-header{
+  background: rgba(11,14,20,.65);
+  -webkit-backdrop-filter: blur(8px); /* iOS */
+  backdrop-filter: blur(8px);
+}
+
+@media (max-width: 480px){
+  .site-header .container{
+    padding-inline: 16px;   /* jarak kiri–kanan biar ga mepet */
+    gap: 12px;              /* jarak antar brand, tombol, dsb */
+    align-items: center;
+  }
+
+  /* Brand sedikit diperkecil supaya muat rapi */
+  .brand{ gap: 8px; }
+  .brand-logo{ height: 20px; }
+  .brand-name{ font-size: 15px; line-height: 1.1; }
+
+  /* Chip "Cek Transaksi" & tombol utama dipadatkan sedikit */
+  .nav-accent{ padding: 8px 10px; font-size: 13px; border-radius: 12px; line-height: 1.15; }
+  .btn.primary{ padding: 10px 12px; font-weight: 600; }
+  .btn svg, .btn i{ width: 16px; height: 16px; margin-right: 6px; } /* ikon petir */
+  
+  /* Hindari saling dorong saat layar sempit */
+  .site-header .container > *{ min-width: 0; }
+  .brand, .nav-accent, .btn{ white-space: nowrap; }
+}
+
+/* Opsional: layar sangat sempit (<360px), kecilkan lagi sedikit */
+@media (max-width: 360px){
+  .brand-name{ font-size: 14px; }
+  .nav-accent{ padding: 7px 9px; }
+  .btn.primary{ padding: 9px 11px; }
+}
