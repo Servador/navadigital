@@ -32,7 +32,7 @@ const PRODUCTS = [
     from:15000,   cat:"Streaming", kind:"subscription", 
     desc:"Streaming film & series terbaru.",
     img:"assets/netflix.jpg", 
-    packages:[{id:"nflx-1p", title:"Netflix ERROR", desc:"Note: Lagi Ada Problem Untuk Netflixl", price:-},
+    packages:[{id:"nflx-1p", title:"Netflix ERROR", desc:"Note: Lagi Ada Problem Untuk Netflixl", price:0},
     ] },
   { id:"spotify",     
     name:"Spotify Premium",         
@@ -164,7 +164,7 @@ const PRODUCTS = [
     from:15000,    cat:"Video", kind:"subscription", 
     desc:"Streaming film & series terbaru.",
     img:"assets/dramabox.jpg",
-    packages:[{id:"z1", title:"Akun Sharing 1 Bulan", desc:"Note : Full Garansi", price:15000},
+    packages:[{id:"db1", title:"Akun Sharing 1 Bulan", desc:"Note : Full Garansi", price:15000},
 ] },
 ];
 
