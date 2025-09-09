@@ -169,6 +169,22 @@ const PRODUCTS = [
     img:"assets/dramabox.jpg",
     packages:[{id:"db1", title:"Akun Sharing 1 Bulan", desc:"Note : Full Garansi", price:15000},
 ] },
+  { id:"DazzCam",      
+    name:"Dazzcam",                  
+    from:20000,    cat:"Lainnya", kind:"subscription", 
+    desc:"Filter Foto.",
+    img:"assets/dazzcam.jpg",
+    packages:[{id:"dzm1", title:"Sharing Lifetime IOS", desc:"Note : Full Garansi", price:20000},
+              {id:"dzm2", title:"Sharing Lifetime Andro/IOS", desc:"Note : Full Garansi", price:25000},
+] },
+  { id:"scribd",      
+    name:"Scribd",                  
+    from:5000,    cat:"Lainnya", kind:"subscription", 
+    desc:"digital document library.",
+    img:"assets/scribd.png",
+    packages:[{id:"scb1", title:"Sharing 1 Bulan", desc:"Note : Full Garansi", price:5000},
+              {id:"scb2", title:"Private 1 Bulan", desc:"Note : Full Garansi", price:8000},
+] },
 ];
 
 const LOGO_BG = {
