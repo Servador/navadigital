@@ -830,3 +830,23 @@ html, body{ overscroll-behavior: contain; } /* atau: overscroll-behavior-y: cont
   .site-header .btn.ghost.sm-only{ display:none !important; }
 }
 
+/* === HEADER: Mobile hanya 2 tombol (Cek & Belanja) === */
+@media (max-width: 899.98px){
+  /* Sembunyikan menu desktop (Produk/Cara Order/FAQ) */
+  .main-nav{ display:none !important; }
+
+  /* Tata letak header + jarak tombol */
+  .site-header .container{ display:flex; align-items:center; gap:12px; }
+  .site-header .btn.ghost.sm-only{ margin-right:8px; } /* jarak Cek vs Belanja */
+}
+
+/* Desktop normal */
+@media (min-width:900px){
+  .main-nav{ display:flex; gap:18px; }                 /* tampilkan menu lengkap */
+  .site-header .btn.ghost.sm-only{ display:none !important; } /* tombol Cek (mobile) disembunyikan */
+}
+
+/* Opsional: layar HP yang sangat kecil agar tidak saling dorong */
+@media (max-width: 380px){
+  .brand-name{ display:none; }  /* kalau perlu, sembunyikan teks 'NavaDigital', logonya tetap tampil */
+}
