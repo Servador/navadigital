@@ -816,3 +816,17 @@ html, body{ overscroll-behavior: contain; } /* atau: overscroll-behavior-y: cont
   .nav-accent{ padding: 7px 9px; }
   .btn.primary{ padding: 9px 11px; }
 }
+
+/* Mobile: sembunyikan desktop-nav + beri jarak header */
+@media (max-width: 899.98px){
+  .main-nav{ display:none !important; }
+  .site-header .container{ display:flex; align-items:center; gap:12px; }
+  .site-header .btn.ghost.sm-only{ margin-right:8px; }
+}
+
+/* Desktop: tampilkan desktop-nav, sembunyikan tombol mobile */
+@media (min-width:900px){
+  .main-nav{ display:flex; gap:18px; }
+  .site-header .btn.ghost.sm-only{ display:none !important; }
+}
+
