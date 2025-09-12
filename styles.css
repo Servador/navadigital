@@ -51,8 +51,16 @@ a:hover{text-decoration:underline}
 }
 .brand{display:flex; align-items:center; gap:10px; font-weight:700}
 .brand-badge{display:inline-grid; place-items:center; width:32px; height:32px; background:linear-gradient(135deg,var(--brand), #3b82f6); color:white; border-radius:10px; font-weight:800}
-.main-nav{display:none; gap:18px}
-@media(min-width:900px){.main-nav{display:flex}}
+.main-nav {
+  display: flex;       /* selalu flex */
+  gap: 12px;           /* kasih jarak default di mobile */
+}
+
+@media (min-width:900px) {
+  .main-nav {
+    gap: 18px;         /* jarak lebih lebar di desktop */
+  }
+}
 
 .btn{display:inline-flex; align-items:center; justify-content:center; gap:8px; border:1px solid rgba(255,255,255,.12);
   background:#1a2134; padding:10px 14px; border-radius:12px; color:var(--text); font-weight:600; cursor:pointer; text-decoration:none; transition:.2s;}
