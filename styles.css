@@ -850,3 +850,24 @@ html, body{ overscroll-behavior: contain; } /* atau: overscroll-behavior-y: cont
 @media (max-width: 380px){
   .brand-name{ display:none; }  /* kalau perlu, sembunyikan teks 'NavaDigital', logonya tetap tampil */
 }
+
+/* === FIX v2: Mobile spacing, prevent overlap === */
+@media (max-width: 899.98px){
+  .main-nav{ display:none !important; }                 /* hide menu desktop */
+  .site-header .container{ display:flex; align-items:center; gap:8px; }
+
+  /* Bebasin ruang di HP */
+  .site-header .brand-name{ display:none; }             /* logo tetap tampil */
+
+  /* Jangan biarkan tombol menyusut/nabrak */
+  .site-header .btn{ flex-shrink:0; white-space:nowrap; }
+
+  /* Dorong Cek Transaksi ke kanan + beri jarak dengan Belanja */
+  .site-header .btn.ghost.sm-only{ margin-left:auto; margin-right:8px; }
+  .site-header .btn.primary{ margin-left:0; }
+}
+
+@media (min-width:900px){
+  .main-nav{ display:flex; gap:18px; }
+  .site-header .btn.ghost.sm-only{ display:none !important; }
+}
