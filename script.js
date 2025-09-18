@@ -33,7 +33,7 @@ const PRODUCTS = [
     desc:"Streaming film & series terbaru.",
     img:"assets/netflix.jpg", 
     packages:[{id:"nflx-1p", title:"Sharing 1P2U 1 Bulan", desc:"Note: akun sharing 1 profil diisi 2 user bisa limit", price:13000},
-              {id:"nflx-2p", title:"Sharing 1P1U 1 Bulan (KOSONG)", desc:"Note: akun sharing 1 profil diisi 1 user bisa limit", price:0},
+              {id:"nflx-2p", title:"Sharing 1P1U 1 Bulan", desc:"Note: akun sharing 1 profil diisi 1 user bisa limit", price:21000},
               {id:"nflx-3p", title:"Netflix Semi Private", desc:"Note: Jatah 1 profile boleh login 2 device (hp/tv) - bebas ubah nama/foto profile - garansi anti limit", price:25000},
               {id:"nflx-4p", title:"Netflix Private", desc:"Note: Dapat 5 Profil , Bisa Ubah PW PIN DLL", price:110000},
     ] },
