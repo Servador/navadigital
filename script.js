@@ -97,19 +97,19 @@ const PRODUCTS = [
     packages:[{id:"pc1", title:"PICSART PRO 1 Bulan", desc:"Note : Full Garansi", price:8000}
     ] },
   { id:"disney",      
-    name:"Disney+",                 
-    from:20000,   cat:"Streaming", kind:"subscription", 
-    desc:"Film & series Disney, Marvel, Star.",
+    name:"Disney+ Hotstar",                 
+    from:15000,   cat:"Streaming", kind:"subscription", 
+    desc:"Film & series Disney, Marvel, Star ULTRA HD.",
     img:"assets/disney.jpg",
-    packages:[{id:"ds1", title:"Disney PLAN 1 Bulan", desc:"Note : 10 User, Sharing : login memakai otp, login 1 device, akun dari penjual Full Garansi", price:20000},
-              {id:"ds2", title:"Disney PREM 1 Bulan", desc:"Note : Nomor Dari Pembeli - All Provider - Full Garansi", price:90000} 
+    packages:[{id:"ds1", title:"Disney Sharing 1 Bulan", desc:"Note : 5 User, Sharing : login memakai otp, login 1 device, akun dari penjual Full Garansi", price:15000},
+              {id:"ds2", title:"Disney Private 1 Bulan", desc:"Note : Nomor Dari Pembeli - All Provider - Full Garansi", price:70000} 
     ] },
   { id:"viu",         
     name:"Viu",                     
     from:5000,    cat:"Video", kind:"subscription", 
     desc:"Drama Asia & variety show.",
     img:"assets/viu.png",
-    packages:[{id:"v1", title:"Viu Private 1 Bulan", desc:"Note : Anti Limit - Full Garansi", price:5000}
+    packages:[{id:"v1", title:"Viu Private 1 Tahun", desc:"Note : Anti Limit - Full Garansi", price:5000}
     ] },
   { id:"vpn",         
     name:"VPN",                     
@@ -135,8 +135,8 @@ const PRODUCTS = [
     from:12000,   cat:"Gaming", kind:"credits", 
     desc:"Kredit Robux untuk Roblox.",
     img:"assets/robux.jpg",
-    packages:[{id:"rb1", title:"100 Robux", desc:"Note : Robux akan masuk dalam waktu maksimal 5 hari (120 jam) melalui Gamepass. ( AFTER TAX )", price:12000},
-              {id:"rb2", title:"500 Robux", desc:"Note : Robux akan masuk dalam waktu maksimal 5 hari (120 jam) melalui Gamepass. ( AFTER TAX )", price:60000},
+    packages:[{id:"rb1", title:"100 Robux", desc:"Note : Robux akan masuk dalam waktu maksimal 5 hari (120 jam) melalui Gamepass. ( AFTER TAX )", price:15000},
+              {id:"rb2", title:"500 Robux", desc:"Note : Robux akan masuk dalam waktu maksimal 5 hari (120 jam) melalui Gamepass. ( AFTER TAX )", price:62000},
               {id:"rb3", title:"1.000 Robux", desc:"Note : Robux akan masuk dalam waktu maksimal 5 hari (120 jam) melalui Gamepass. ( AFTER TAX )", price:120000},
               {id:"rb4", title:"5.000 Robux", desc:"Note : Robux akan masuk dalam waktu maksimal 5 hari (120 jam) melalui Gamepass. ( AFTER TAX )", price:600000},
               {id:"rb5", title:"10.000 Robux", desc:"Note : Robux akan masuk dalam waktu maksimal 5 hari (120 jam) melalui Gamepass. ( AFTER TAX )", price:1200000}
