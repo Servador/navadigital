@@ -132,7 +132,7 @@ const PRODUCTS = [
     ] },
   { id:"robux",       
     name:"Robux",                   
-    from:12000,   cat:"Gaming", kind:"credits", 
+    from:15000,   cat:"Gaming", kind:"credits", 
     desc:"Kredit Robux untuk Roblox.",
     img:"assets/robux.jpg",
     packages:[{id:"rb1", title:"100 Robux", desc:"Note : Robux akan masuk dalam waktu maksimal 5 hari (120 jam) melalui Gamepass. ( AFTER TAX )", price:15000},
