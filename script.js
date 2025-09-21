@@ -168,7 +168,7 @@ const PRODUCTS = [
     from:20000,    cat:"Video", kind:"subscription", 
     desc:"Streaming film & series terbaru.",
     img:"assets/dramabox.jpg",
-    packages:[{id:"db1", title:"Akun Sharing 1 Bulan", desc:"Note : Full Garansi", price:15000},
+    packages:[{id:"db1", title:"Akun Sharing 1 Bulan", desc:"Note : Full Garansi", price:20000},
 ] },
   { id:"DazzCam",      
     name:"Dazzcam",                  
