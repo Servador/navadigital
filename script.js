@@ -165,7 +165,7 @@ const PRODUCTS = [
 ] },
   { id:"dramabox",      
     name:"Drama Box",                  
-    from:15000,    cat:"Video", kind:"subscription", 
+    from:20000,    cat:"Video", kind:"subscription", 
     desc:"Streaming film & series terbaru.",
     img:"assets/dramabox.jpg",
     packages:[{id:"db1", title:"Akun Sharing 1 Bulan", desc:"Note : Full Garansi", price:15000},
